@@ -33,23 +33,22 @@ function addCol() {
 }
 
 function removeRow(){
-
+  rows--;
+  let table = document.getElementById('dynamicTable');
+  let cells = table.getElementsByTagName('tr')[rows];    
+  table.removeChild(cells);
 }
 
-function removeCol(){
-  columns--;
-  let row = document.getElementById('dynamicTable').getElementsByTagName('tr');
-  for (let i = 0; i < rows; i++) {
-    const cell = document.createElement('td');
-    cell.style.backgroundColor = 'white';
+// function removeCol(){
+//   columns--;
+//   let row = document.getElementById('dynamicTable').getElementsByTagName('tr');
+//   for (let i = 0; i < rows; i++) {
+//     const cell = document.createElement('td');
+    
+//     row[i].removeChild(cell);
 
-    cell.onclick = function () {
-      colorChange(this);
-    };
-    row[i].appendChild(cell);
-
-  }
-}
+//   }
+// }
 
 function selectColor() {
   let col = document.getElementById('selectedColorId').value;
@@ -61,6 +60,7 @@ function fillU() {
   let table = document.getElementById('dynamicTable');
 
   for (let x = 0; x < rows; x++) {
+    //row of cells
     let cells = table.getElementsByTagName('tr')[x].getElementsByTagName('td');
 
 
