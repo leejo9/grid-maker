@@ -1,6 +1,6 @@
 let rows = 0;
 let columns = 1;
-let color = 'blue';
+let color = 'white';
 function addRow() {
   rows++;
   let table = document.getElementById('dynamicTable');
@@ -39,16 +39,16 @@ function removeRow(){
   table.removeChild(cells);
 }
 
-// function removeCol(){
-//   columns--;
-//   let row = document.getElementById('dynamicTable').getElementsByTagName('tr');
-//   for (let i = 0; i < rows; i++) {
-//     const cell = document.createElement('td');
-    
-//     row[i].removeChild(cell);
+function removeCol(){
+  columns--;
+  let table = document.getElementById('dynamicTable');
+  for (let i = 0; i < rows; i++) {
+    let row = table.getElementsByTagName('tr')[i]; 
+    let cells = row.getElementsByTagName('td');    
+    row.removeChild(cells[columns])
 
-//   }
-// }
+  }
+}
 
 function selectColor() {
   let col = document.getElementById('selectedColorId').value;
