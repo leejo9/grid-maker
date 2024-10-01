@@ -33,7 +33,7 @@ function addCol() {
 }
 
 
-function selectColor(){
+function selectColor() {
   let col = document.getElementById('selectedColorId').value;
   color = col;
 }
@@ -52,6 +52,18 @@ function fillU() {
       if (cell.style.backgroundColor === 'white') {
         cell.style.backgroundColor = color;
       }
+    }
+  }
+}
+
+function fillAll() {
+  let table = document.getElementById('dynamicTable');
+
+  for (let x = 0; x < rows; x++) {
+    let cells = table.getElementsByTagName('tr')[x].getElementsByTagName('td');
+
+    for (let y = 0; y < cells.length; y++) {
+      cells[y].style.backgroundColor = color;
     }
   }
 }
