@@ -30,6 +30,12 @@ function addCol() {
   }
 }
 
+function selectColor(){
+  let col = document.getElementById('selectedColorId').value;
+  color = col;
+}
+
+
 function resetTable() {
   table = document.getElementById('dynamicTable');
   table.innerHTML = '';
