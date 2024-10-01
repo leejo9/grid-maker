@@ -1,3 +1,3 @@
 # grid-maker
 
-Team Member: John Lee
+Team Member: John Lee (leejo9)
