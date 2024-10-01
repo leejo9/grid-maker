@@ -32,7 +32,8 @@ function addCol() {
   }
 }
 
-function selectColor() {
+
+function selectColor(){
   let col = document.getElementById('selectedColorId').value;
   color = col;
 }
@@ -54,6 +55,7 @@ function fillU() {
     }
   }
 }
+
 function resetTable() {
   table = document.getElementById('dynamicTable');
   table.innerHTML = '';
