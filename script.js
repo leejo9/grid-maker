@@ -5,7 +5,7 @@ function addRow() {
   rows++;
   let table = document.getElementById('dynamicTable');
 
-  const row = document.createElement('tr'); 
+  const row = document.createElement('tr');
   for (let x = 0; x < columns; x++) {
     const cell = document.createElement('td');
     cell.onclick = function () {
@@ -14,6 +14,19 @@ function addRow() {
 
     row.appendChild(cell);
     table.appendChild(row);
+  }
+}
+function addCol() {
+  columns++;
+  let row = document.getElementById('dynamicTable').getElementsByTagName('tr');
+  for (let i = 0; i < rows; i++) {
+    const cell = document.createElement('td');
+
+    cell.onclick = function () {
+      colorChange(this);
+    };
+    row[i].appendChild(cell);
+
   }
 }
 
