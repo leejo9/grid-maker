@@ -32,6 +32,24 @@ function addCol() {
   }
 }
 
+function removeRow(){
+
+}
+
+function removeCol(){
+  columns--;
+  let row = document.getElementById('dynamicTable').getElementsByTagName('tr');
+  for (let i = 0; i < rows; i++) {
+    const cell = document.createElement('td');
+    cell.style.backgroundColor = 'white';
+
+    cell.onclick = function () {
+      colorChange(this);
+    };
+    row[i].appendChild(cell);
+
+  }
+}
 
 function selectColor() {
   let col = document.getElementById('selectedColorId').value;
@@ -64,6 +82,18 @@ function fillAll() {
 
     for (let y = 0; y < cells.length; y++) {
       cells[y].style.backgroundColor = color;
+    }
+  }
+}
+
+function clearAll(){
+  let table = document.getElementById('dynamicTable');
+
+  for (let x = 0; x < rows; x++) {
+    let cells = table.getElementsByTagName('tr')[x].getElementsByTagName('td');
+
+    for (let y = 0; y < cells.length; y++) {
+      cells[y].style.backgroundColor = 'white';
     }
   }
 }
