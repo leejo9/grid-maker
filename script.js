@@ -44,7 +44,16 @@ function removeRow() {
   table.removeChild(cells);
 }
 
+function removeCol(){
+  columns--;
+  let table = document.getElementById('dynamicTable');
+  for (let i = 0; i < rows; i++) {
+    let row = table.getElementsByTagName('tr')[i]; 
+    let cells = row.getElementsByTagName('td');    
+    row.removeChild(cells[columns])
 
+  }
+}
 
 function selectColor() {
   let col = document.getElementById('selectedColorId').value;
