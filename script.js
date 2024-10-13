@@ -38,6 +38,9 @@ function addCol() {
 }
 
 function removeRow() {
+  if(rows==0){
+    return 0;
+  }
   rows--;
   let table = document.getElementById('dynamicTable');
   let cells = table.getElementsByTagName('tr')[rows];
@@ -45,6 +48,9 @@ function removeRow() {
 }
 
 function removeCol(){
+  if(columns==0){
+    return 0;
+  }
   columns--;
   let table = document.getElementById('dynamicTable');
   for (let i = 0; i < rows; i++) {
