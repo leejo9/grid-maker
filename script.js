@@ -18,24 +18,29 @@ function addRow() {
   }
 }
 function addCol() {
-  columns++;
-  let row = document.getElementById('dynamicTable').getElementsByTagName('tr');
-  for (let i = 0; i < rows; i++) {
-    const cell = document.createElement('td');
-    cell.style.backgroundColor = 'white';
+  if (rows == 0) {
+    addRow();
+  }
+  else {
+    columns++;
+    let row = document.getElementById('dynamicTable').getElementsByTagName('tr');
+    for (let i = 0; i < rows; i++) {
+      const cell = document.createElement('td');
+      cell.style.backgroundColor = 'white';
 
-    cell.onclick = function () {
-      colorChange(this);
-    };
-    row[i].appendChild(cell);
+      cell.onclick = function () {
+        colorChange(this);
+      };
+      row[i].appendChild(cell);
 
+    }
   }
 }
 
-function removeRow(){
+function removeRow() {
   rows--;
   let table = document.getElementById('dynamicTable');
-  let cells = table.getElementsByTagName('tr')[rows];    
+  let cells = table.getElementsByTagName('tr')[rows];
   table.removeChild(cells);
 }
 
@@ -77,7 +82,7 @@ function fillAll() {
   }
 }
 
-function clearAll(){
+function clearAll() {
   let table = document.getElementById('dynamicTable');
 
   for (let x = 0; x < rows; x++) {
